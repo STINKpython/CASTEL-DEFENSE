@@ -10,8 +10,7 @@ NIVEL_TECHO = 50
 FPS = 120
 
 #RUTA DE IMAGENES
-RUTA_IMAGEN = r"C:\Users\lucia\Documents\Castle Defense\recursos\\"  #RUTA DE IMAGENES
-RUTA_MUSICA = r"C:\Users\lucia\Documents\JUEGO_FINAL\sounds\\"   #RUTA DE MUSICA
+RUTA_IMAGEN = './recursos/'#RUTA DE IMAGENES
 
 #DIRECCION DONDE MIRA EL PERSONAJKE
 IZQUIERDA = -1
@@ -42,7 +41,7 @@ M_BRIGHT_CLICK = 2
 
 #TILED
 PLATAFORMA = "P"
-PISO = "O"
+PISO = "5"
 MURO = "M"
 LOOT = "B"
 CAJA = "C"
@@ -51,8 +50,8 @@ FONDO_ACIDO = "A"
 TOP_ACIDO = "T"
 MOBILE = "U"
 
-CORAZON = RUTA_IMAGEN + r"Menu\Button\Health_Dot.png"
-BALA = RUTA_IMAGEN + r"Menu\Button\Armor_Bar_Dot.png"
+CORAZON = RUTA_IMAGEN + r"Menu/Button/Health_Dot.png"
+BALA = RUTA_IMAGEN + r"Menu/Button/Armor_Bar_Dot.png"
 
 
 

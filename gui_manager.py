@@ -9,7 +9,7 @@ class FormManager():
     """
     def __init__(self,pantalla) -> None:
         self.pantalla = pantalla
-        self.form_nivel_1 = self.crear_nivel("nivel_1",RUTA_IMAGEN + "fondo\MetalSlug-Mission2.jpg")
+        self.form_nivel_1 = self.crear_nivel("nivel_1",RUTA_IMAGEN + "fondo/MetalSlug-Mission2.jpg")
         self.niveles = [self.form_nivel_1]
 
     def crear_nivel(self,nivel,fondo):
