@@ -30,7 +30,7 @@ while True:
 
     juego.actualizar_forms(events)
 
-    soldadito.update(delta_ms,eventos)
+    soldadito.update(delta_ms,events)
     soldadito.draw(PANTALLA)
     soldadito.detect_object(enemy)
 

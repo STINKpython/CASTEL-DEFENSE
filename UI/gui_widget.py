@@ -36,6 +36,9 @@ class Widget:
 
         if self.image_bg:
             self.slave_surface.blit(self.image_bg, (0, 0))
+            
+        if self.color_border:
+            py.draw.rect(self.slave_surface, self.color_border, self.slave_surface.get_rect(), 2)
 
         if self._text is not None:
             image_text = self._font_sys.render(
@@ -45,8 +48,7 @@ class Widget:
                 self.slave_rect.height/2 - image_text.get_rect().height/2
             ])
 
-        if self.color_border:
-            py.draw.rect(self.slave_surface, self.color_border, self.slave_surface.get_rect(), 2)
+        
 
     def update(self,lista_eventos):
         self.render()
