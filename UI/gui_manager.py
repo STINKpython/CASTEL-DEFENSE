@@ -1,6 +1,7 @@
-from pygame.locals import *
+import pygame as py
 from configuraciones import *
 from UI.gui_level import Level
+from debug import debug
 
 
 class FormManager():
@@ -27,7 +28,12 @@ class FormManager():
         Este metodo se encarga de actualizar y dibujar el formulario que este activo
         Parametros: una lista de eventos, teclas, sonidos, tambien un valor delta_ms, y un evento de usuario de tiempo
         """
+        
 
         if (self.form_nivel_1.active):
             self.form_nivel_1.update(eventos)
             self.form_nivel_1.draw()
+            
+        if DEBUG:
+            debug(py.mouse.get_pos())
+            debug(py.mouse.get_pressed(), 40)

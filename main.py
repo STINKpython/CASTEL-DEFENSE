@@ -25,6 +25,8 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
+    
+        
 
     delta_ms = clock.tick(FPS)
 
