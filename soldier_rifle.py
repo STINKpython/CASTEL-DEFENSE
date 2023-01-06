@@ -6,8 +6,8 @@ class Soldier_rifle:
     def __init__(self,x,y):
 
         # Animaciones
-        self.run = Auxiliar.getSurfaceFromSpriteSheet("unidades/soldier/run and point.png",8,1,False,1,1)[:6]
-        self.atack =  Auxiliar.getSurfaceFromSpriteSheet("unidades/soldier/run and point.png",8,1,False,1,1)[6:8]       
+        self.run = Auxiliar.getSurfaceFromSpriteSheet(r"recursos\unidades\sodlado_bazuca\Soldier_bazuca_run2.png",8,1,True,1,1)[:6]
+        self.atack =  Auxiliar.getSurfaceFromSpriteSheet(r"recursos\unidades\soldier\run and point.png",8,1,False,1,1)[6:8]       
         self.frame = 0
         self.animation = self.run
         self.image = self.animation[self.frame]
@@ -20,10 +20,17 @@ class Soldier_rifle:
         self.live=True
         self.life=100
         self.tiempo_transcurrido = 0
-        self.frame_rate_ms = 300
+        self.frame_rate_ms = 9.5
+        #acciones
+        self.atacar = False
+
+
+
+
+
 
     def move_x(self):
-        self.rect.x += 5
+        self.rect.x += 1
 
     def move_y(self):
         self.rect.y += 0
@@ -32,9 +39,22 @@ class Soldier_rifle:
         
         self.animation=self.run
         self.move_x()
+        #self.detect_object()
+
+    def detect_object(self,objeto):
+
+        if self.rect_radar.colliderect(objeto):
+            self.atack = True
+            self.ataque()
+
+    def ataque(self):
+        
+        if self.atacar:
+            self.animation = self.atack
 
 
     def update(self,delta_ms,lista_eventos):
+
         self.tiempo_transcurrido = 0
 
         if self.live:
