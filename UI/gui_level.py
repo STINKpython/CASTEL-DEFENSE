@@ -2,7 +2,7 @@ import pygame
 from configuraciones import *
 from UI.gui_form import Form
 
-from UI.gui_frame_unity import FrameUnity
+from UI.gui_unity import Unity
 from UI.gui_time import Time
 from UI.gui_gold import Gold
 
@@ -40,16 +40,18 @@ class Level(Form):
             active
         )
 
-        self.frames = [
-            FrameUnity(self, create_pos_frame(i), SIZE_FRAME_UNITY) for i, frame in enumerate(range(AMOUNT_FRAMES_UNITIES))
+        self.unities = [
+            Unity(self, create_pos_frame(i), i) for i, unity in enumerate(range(AMOUNT_UNITIES))
         ]
+        self.imagen_b2 = self.imagen_bg
 
-        self.time = Time(self, POS_TIME, SIZE_TIME)
-        self.gold = Gold(self, POS_GOLD, SIZE_GOLD)
+        self.time = Time(self)
+        self.gold = Gold(self)
 
         self.lista_widget = []
-        self.lista_widget.extend(self.frames)
+        self.lista_widget.extend(self.unities)
         self.lista_widget.extend([self.time, self.gold])
+        
 
     def update(self, list_event):
         for aux_widget in self.lista_widget:
