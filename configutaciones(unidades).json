@@ -1,0 +1,9 @@
+{"UNIDADES":{
+"mars people":{"frames":9 },
+"soldado_bazuca":{"cd_shot": 500,
+                    "life":100,
+                    "frame_rate_ms":9,
+                "path_run": "recursos/unidades/sodlado_bazuca/Soldier_bazuca_run2.png",
+                "path_atack":"recursos/unidades/sodlado_bazuca/Soldier_bazuca_atack.png"}
+}
+}

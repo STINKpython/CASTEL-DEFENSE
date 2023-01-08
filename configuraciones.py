@@ -76,3 +76,4 @@ MOBILE = "U"
 
 CORAZON = RUTA_IMAGEN + r"Menu/Button/Health_Dot.png"
 BALA = RUTA_IMAGEN + r"Menu/Button/Armor_Bar_Dot.png"
+W_H_RECT=10
