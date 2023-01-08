@@ -3,7 +3,7 @@ from pygame.locals import *
 import sys
 from configuraciones import *
 from UI.gui_manager import *
-from soldier_rifle import Soldier_rifle
+from soldier_bazuka import Soldier_rifle
 from mars import Enemy_mars
 
 flags = DOUBLEBUF 
@@ -16,8 +16,8 @@ juego = FormManager(PANTALLA)
 timer_1s = pygame.USEREVENT + 0
 pygame.time.set_timer(timer_1s,1000)
 
-soldadito = Soldier_rifle(50,290)
-enemy = Enemy_mars(300,300)
+soldadito = Soldier_rifle(50,300)
+enemy = Enemy_mars(300,330)
 
 while True:     
     events = pygame.event.get()
@@ -25,32 +25,16 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
-    
         
-
     delta_ms = clock.tick(FPS)
 
     juego.actualizar_forms(events)
 
-    soldadito.update(delta_ms,events)
+    soldadito.update(delta_ms,events,enemy.rects["LEFT"])
     soldadito.draw(PANTALLA)
-    soldadito.detect_object(enemy)
+    #soldadito.detect_object()
 
     enemy.update(delta_ms)
     enemy.draw(PANTALLA)
     
-    
     pygame.display.flip()
-
-    
-
-
-
-
-    
-
-
-  
-
-
-
