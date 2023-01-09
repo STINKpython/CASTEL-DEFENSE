@@ -16,7 +16,7 @@ juego = FormManager(PANTALLA)
 timer_1s = pygame.USEREVENT + 0
 pygame.time.set_timer(timer_1s,1000)
 
-soldadito = Soldier_rifle(50,300)
+soldadito = Soldier_rifle()
 enemy = Enemy_mars(300,330)
 
 while True:     

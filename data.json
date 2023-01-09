@@ -1,0 +1,32 @@
+{
+    "x": 60,
+    "y": 300,
+    "speed": 4,
+    "frame_rate_ms": 100,
+    "move_rate_ms": 50,
+    "type": "recursos/unidades/sodlado_bazuca/",
+    "scale": 0.15,
+    "interval_time_jump": 300,
+    "width": 60,
+    "height": 100,
+    "status": "run",
+    "orientation": "right",
+    "cd_shot": 500,
+    "life":100,
+    "animations": {
+        "run": {
+            "path": "Soldier_bazuca_run.png",
+            "cols": 11,
+            "rows": 1,
+            "right": true,
+            "left": false
+        },
+        "atack": {
+            "path": "Soldier_bazuca_atack.png",
+            "cols": 8,
+            "rows": 1,
+            "right": true,
+            "left": false
+        }
+    }
+}
