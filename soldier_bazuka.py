@@ -3,13 +3,14 @@ from configuraciones import *
 from bazuka_shot import Bazuca_shot
 from character import Character
 
-class Soldier_rifle(Character):
+
+class SoldierRifle(Character):
     def __init__(self):
         super().__init__('data.json')
 
         self.rect_radar = pygame.Rect(self.rect.x+170, self.rect.y, 20, 40)
         self.rect_gun_point = pygame.Rect(
-            self.rect.x+40, self.rect.y+40, 10, 10)
+            self.rect.right, self.rect.centery, 10, 10)
         # funciones
         self.tiempo_transcurrido_bullet = 0
 
@@ -32,22 +33,21 @@ class Soldier_rifle(Character):
         if self.rect_radar.colliderect(objeto):
             self.atacar = True
             self.frame = 0
-            self.animation = self.animations['atack']
             self.move_x(0)
-            self.rect.y + 40
-            self.frame_rate_ms = 7
+            self.speed = 0
+            self.status = 'atack'
+            self.frame_rate_ms = 250
+
         else:
             self.move_x()
-            self.animation = self.animations['run']
+            self.status = 'run'
 
     def ataque(self, delta_ms):
         self.tiempo_transcurrido_bullet += delta_ms
         if self.atacar:
             if self.tiempo_transcurrido_bullet > self.cd_shot:
-
-                self.animation = self.animations['atack']
                 self.shoot_list.append(Bazuca_shot(
-                    self.rect_gun_point.x, self.rect_gun_point.y-10))
+                    self.rect.right, self.rect_gun_point.y))
                 self.tiempo_transcurrido_bullet = 0
 
     def update(self, delta_ms, lista_eventos, objeto):
@@ -61,7 +61,7 @@ class Soldier_rifle(Character):
             if DEBUG:
                 pygame.draw.rect(screen, GREEN, self.rect_radar)
                 pygame.draw.rect(screen, GRAY, self.rect_gun_point)
-                
+
             if len(self.shoot_list) > 0:
                 for e in self.shoot_list:
                     e.update()

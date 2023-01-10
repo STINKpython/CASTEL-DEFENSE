@@ -1,8 +1,8 @@
 {
     "x": 60,
     "y": 300,
-    "speed": 4,
-    "frame_rate_ms": 100,
+    "speed": 2,
+    "frame_rate_ms": 50,
     "move_rate_ms": 50,
     "type": "recursos/unidades/sodlado_bazuca/",
     "scale": 0.15,

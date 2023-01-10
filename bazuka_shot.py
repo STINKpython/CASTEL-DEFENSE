@@ -1,6 +1,6 @@
 from configuraciones import *
 from auxiliar import Auxiliar
-
+import pygame as py
 
 class Bazuca_shot():
 
@@ -47,3 +47,5 @@ class Bazuca_shot():
     def draw(self, screen):
         if self.live:
             screen.blit(self.image, self.rect)
+        if DEBUG:
+            py.draw.rect(screen, GREENYELLOW, self.rect)
